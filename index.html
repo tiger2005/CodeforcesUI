@@ -1,0 +1,81 @@
+<html>
+	<head>
+		<script src="./js/highcharts.js"></script>
+		<script src="./js/jquery.min.js"></script>
+		<script src="./js/json3.min.js"></script>
+		<script src="./js/showdown.js"></script>
+		<link rel="stylesheet" href="./css/client.css">
+		<link class="ThemeTypeIf" rel="stylesheet" href="./css/default.css">
+		<link rel="stylesheet" href="./css/all.min.css">
+		<script>
+			var DarkMode = false;
+			if (window.matchMedia('(prefers-color-scheme)').media !== 'not all') {
+				if(window.matchMedia('(prefers-color-scheme: dark)').matches){
+					DarkMode = true, $('.ThemeTypeIf').attr('href','./css/dark.css');
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<div class="HtmlContainer">
+			<div class="ToolList"><div class="Wrapper">
+				<div class="ToolListItem"><i class="fa fa-calendar"></i></div>
+				<div class="ToolListItem"><i class="fa fa-user"></i></div>
+				<div class="ToolListItem"><i class="fa fa-info-circle"></i></div>
+			</div></div>
+			<div class="Interface">
+				<div class="PageViewer"><div style="width:100%;height:100%;display:grid;place-items:center"><span style="font-size: 14px;font-family:Consolas;color:white;">Page Viewer</span></div></div>
+				<div class="splitDiv"><i class="fa fa-ellipsis-v"></i></div>
+				<div class="ContentWrapper"><div style="width:100%;height:100%;display:grid;place-items:center"><span style="font-size: 14px;font-family:Consolas;color:white;">Content Wrapper</span></div></div>
+			</div>
+		</div>
+	</body>
+	<footer>
+		<script src="./js/client.js"></script>
+		<script>
+		    var element =  document.documentElement;
+		    if(navigator.userAgent.indexOf("Chrome")>0){
+		    	element = document.body;
+		    }
+			function ChangeTheme(){
+				if(!DarkMode){
+					$('.ThemeTypeIf').attr('href','./css/dark.css');
+				}
+				else{
+					$('.ThemeTypeIf').attr('href','./css/default.css');
+				}
+				DarkMode = !DarkMode;
+			}
+			if (window.matchMedia('(prefers-color-scheme)').media !== 'not all') {
+				var listeners={
+				    dark: function(mediaQueryList ){
+				        if(mediaQueryList.matches && !DarkMode)
+				        	ChangeTheme();
+				    },
+				    light: function(mediaQueryList){
+				        if(mediaQueryList.matches && DarkMode)
+				        	ChangeTheme();
+				    }
+				}
+				window.matchMedia('(prefers-color-scheme: dark)').addListener(listeners.dark);
+				window.matchMedia('(prefers-color-scheme: light)').addListener(listeners.light);
+			}
+			function setLeftWidth(_x){
+				$(".PageViewer").width(_x);
+			}
+			$(".splitDiv").mousedown(function(e) {
+		    	$("body").css("user-select","none");
+		        $("body").mousemove(function(eve) {
+		            var _x = eve.pageX - 60;
+		            _x = Math.max(_x, 100);
+		            _x = Math.min(_x, 300);
+		            setLeftWidth(_x);
+		        })
+		    });
+		    $("body").mouseup(function(e) {
+		    	$("body").css("user-select","text");
+		         $(this).unbind("mousemove");
+		    });
+		</script>
+	</footer>
+</html>

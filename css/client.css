@@ -1,0 +1,77 @@
+@font-face {
+	font-family: 'Consolas';
+	src: url('../fonts/Consolas.ttf') format('truetype');
+}
+@font-face {
+	font-family: 'Verdana';
+	src: url('../fonts/Verdana.ttf') format('truetype');
+}
+@font-face {
+	font-family: 'VerdanaBold';
+	src: url('../fonts/VerdanaBold.ttf') format('truetype');
+}
+body{
+	margin: 0px;
+	border-radius: 5px;
+}
+.HtmlContainer{
+	width: calc(100%);
+	height: calc(100%);
+	-webkit-app-region: drag;
+}
+.ToolList{
+	float: left;
+	width: 60px;
+	height: 100%;
+	display: inline-grid;
+	place-items: center;
+}
+.ToolListItem{
+	width: 40px;
+	height: 40px;
+	margin: 5px;
+	border-radius: 5px;
+	display: grid;
+	place-items: center;
+	font-size: 30px;
+	transition: width 0.3s, height 0.3s, font-size 0.3s; 
+}
+.ToolListItem:hover{
+	width: 50px;
+	height: 50px;
+	font-size: 40px;
+}
+.Wrapper{
+	-webkit-app-region: no-drag;
+	display: grid;
+	place-items: center;
+}
+.PageViewer{
+	display: inline-block;
+	width: 100px;
+	height: 100%;
+}
+.ContentWrapper{
+	flex: 1;
+	display: inline-block;
+	width: calc(100% - 100px - 15px);
+	height: 100%;
+}
+.splitDiv{
+	-webkit-app-region: no-drag;
+	cursor: e-resize;
+	width: 15px;
+	height: calc(100% - 6px);
+	margin: 3px 0px;
+	display: inline-grid;
+	place-items: center;
+	font-size: 14px;
+	transition: background 0.3s;
+}
+.Interface{
+	float: right;
+	display: flex;
+	flex-direction: row;
+	width: calc(100% - 60px);
+	height: 100%;
+}
