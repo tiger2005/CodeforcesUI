@@ -1,26 +1,19 @@
+'use scrict';
 var win = nw.Window.get();
 setTimeout(function(){win.show();},300);
-win.setAlwaysOnTop(true);
-const showdown = require("showdown");
-const showdownHighlight = require("showdown-highlight");
-const showdownKatex = require("showdown-katex");
-var converter = new showdown.Converter({
-    emoji: true,
-    tables: true,
-    strikethrough: true,
-    literalMidWordUnderscores: true,
-    splitAdjacentBlockquotes: true,
-    extensions: [
-        showdownKatex({
-            throwOnError: true,
-            displayMode: false,
-            style_errorColor: '#ffff00',
-            delimiters: [
-                { left: "$$", right: "$$", display: true },
-                { left: "$", right: "$", display: false },
-                { left: '&&', right: '&&', display: true, asciimath: true },
-            ],
-        }),
-        showdownHighlight,
-    ],
-});
+$(".WindowMinimize").click(function(){
+	win.minimize();
+})
+$(".WindowMaximize").click(function(){
+	win.maximize();
+	$(".WindowMaximize").css('display','none');
+	$(".WindowRestore").css('display','inline-block');
+})
+$(".WindowRestore").click(function(){
+	win.restore();
+	$(".WindowMaximize").css('display','inline-block');
+	$(".WindowRestore").css('display','none');
+})
+$(".WindowClose").click(function(){
+	win.close();
+})

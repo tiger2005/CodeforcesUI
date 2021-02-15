@@ -3,7 +3,6 @@
 		<script src="./js/highcharts.js"></script>
 		<script src="./js/jquery.min.js"></script>
 		<script src="./js/json3.min.js"></script>
-		<script src="./js/showdown.js"></script>
 		<link rel="stylesheet" href="./css/client.css">
 		<link class="ThemeTypeIf" rel="stylesheet" href="./css/default.css">
 		<link rel="stylesheet" href="./css/all.min.css">
@@ -18,15 +17,25 @@
 	</head>
 	<body>
 		<div class="HtmlContainer">
-			<div class="ToolList"><div class="Wrapper">
-				<div class="ToolListItem"><i class="fa fa-calendar"></i></div>
-				<div class="ToolListItem"><i class="fa fa-user"></i></div>
-				<div class="ToolListItem"><i class="fa fa-info-circle"></i></div>
+			<div class="ToolList"><div class="ToolListItemWrapper">
+				<div class="ToolListItem" title="Blog"><i class="fa fa-sticky-note"></i></div>
+				<div class="ToolListItem" title="Contest/Gym"><i class="fa fa-calendar"></i></div>
+				<div class="ToolListItem" title="Problem"><i class="fa fa-book"></i></div>
+				<div class="ToolListItem" title="Standings"><i class="fa fa-list"></i></div>
+				<div class="ToolListItem" title="Status"><i class="fa fa-pie-chart"></i></div>
+				<div class="ToolListItem" title="User"><i class="fa fa-user"></i></div>
 			</div></div>
 			<div class="Interface">
 				<div class="PageViewer"><div style="width:100%;height:100%;display:grid;place-items:center"><span style="font-size: 14px;font-family:Consolas;color:white;">Page Viewer</span></div></div>
 				<div class="splitDiv"><i class="fa fa-ellipsis-v"></i></div>
-				<div class="ContentWrapper"><div style="width:100%;height:100%;display:grid;place-items:center"><span style="font-size: 14px;font-family:Consolas;color:white;">Content Wrapper</span></div></div>
+				<div class="ContentWrapper">
+					<div class="WindowOption">
+						<div class="WindowMinimize fa fa-window-minimize" title="Minimize"></div>
+						<div class="WindowMaximize fa fa-window-maximize" title="Maximize"></div>
+						<div class="WindowRestore fa fa-window-restore" style="display:none" title="Restore"></div>
+						<div class="WindowClose fa fa-window-close" title="Close"></div>
+					</div>
+				</div>
 			</div>
 		</div>
 	</body>
@@ -66,9 +75,9 @@
 			$(".splitDiv").mousedown(function(e) {
 		    	$("body").css("user-select","none");
 		        $("body").mousemove(function(eve) {
-		            var _x = eve.pageX - 60;
-		            _x = Math.max(_x, 100);
-		            _x = Math.min(_x, 300);
+		            var _x = eve.pageX - 70;
+		            _x = Math.max(_x, 150);
+		            _x = Math.min(_x, 350);
 		            setLeftWidth(_x);
 		        })
 		    });

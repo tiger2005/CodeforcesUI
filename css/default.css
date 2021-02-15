@@ -7,8 +7,22 @@ body{
 .ToolListItem{
 	background: #ccc;
 }
+.splitDiv{
+	border: 1px solid #ccc;
+}
 .splitDiv:hover{
 	background: #ccc;
+}
+.WindowMinimize, .WindowMaximize, .WindowClose, .WindowRestore{
+	font-color: #777;
+}
+.WindowMinimize:hover, .WindowMaximize:hover, .WindowRestore:hover{
+	font-color: #fff;
+	background: #777;
+}
+.WindowClose:hover{
+	font-color: #fff;
+	background: red;
 }
 /*Highlights Options*/
 .hljs-comment,.hljs-quote

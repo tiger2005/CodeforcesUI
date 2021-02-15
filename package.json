@@ -1,23 +1,24 @@
 {
   "main": "index.html",
-  "name": "CodeForces Contest Helper",
-  "description": "Codeforces Contest Helper",
-  "version": "1.0.1",
+  "name": "CodeforcesUI",
+  "description": "Codeforces UI",
+  "version": "0.1",
+  "nodejs": true,
   "chromium-args": "--enable-webgl --ignore-gpu-blacklist --disable-password-generation  --disable-gpu --disable-gpu-compositing  --process-per-site --disable-crash-handler=true --disable-breakpad --disable-notifications --disable-glsl-translator --disable-java --disable-speech-api --disable-voice-input --disable-sync  --disable-app-window-cycling --disable-client-side-phishing-detection --disable-cloud-import --disable-datasaver-prompt --disable-demo-mode --disable-device-discovery-notifications --disable-logging --disable-network-portal-notification --ignore-certificate-errors --in-process-gpu --enable-transparent-visuals --disable-gpu",
   "keywords": [
     "Codeforces",
     "node-webkit"
   ],
   "window": {
-    "title": "Codeforces Contest Helper",
+    "title": "Codeforces UI",
     "icon": "icon.png",
-    "toolbar": false,
+    "toolbar": true,
     "frame": false,
-    "width": 720,
-    "height": 495,
+    "width": 800,
+    "height": 550,
     "position": "center",
-    "min_width": 720,
-    "min_height": 495,
+    "min_width": 800,
+    "min_height": 550,
     "max_width": 9999,
     "max_height": 9999,
     "as_desktop": false,
@@ -33,10 +34,5 @@
     "plugin": true,
     "java": true,
     "page-cache": false
-  },
-  "dependencies": {
-    "showdown": "^1.9.1",
-    "showdown-highlight": "^2.1.6",
-    "showdown-katex": "^0.8.0"
   }
 }

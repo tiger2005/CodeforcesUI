@@ -463,3 +463,25 @@
 .fa-ellipsis-v:before {
   content: "\f142";
 }
+.fa-sticky-note:before {
+  content: "\f249";
+}
+.fa-newspaper-o:before {
+  content: "\f1ea";
+}
+.fa-list:before {
+  content: "\f03a";
+}
+.fa-pie-chart:before {
+  content: "\f200";
+}
+.fa-window-minimize:before {
+  content: "\f2d1";
+}
+.fa-times-rectangle:before,
+.fa-window-close:before {
+  content: "\f2d3";
+}
+.fa-window-restore:before {
+  content: "\f2d2";
+}

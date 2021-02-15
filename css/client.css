@@ -25,6 +25,7 @@ body{
 	height: 100%;
 	display: inline-grid;
 	place-items: center;
+	margin: 0px 5px;
 }
 .ToolListItem{
 	width: 40px;
@@ -41,14 +42,14 @@ body{
 	height: 50px;
 	font-size: 40px;
 }
-.Wrapper{
+.ToolListItemWrapper{
 	-webkit-app-region: no-drag;
 	display: grid;
 	place-items: center;
 }
 .PageViewer{
 	display: inline-block;
-	width: 100px;
+	width: 150px;
 	height: 100%;
 }
 .ContentWrapper{
@@ -72,6 +73,19 @@ body{
 	float: right;
 	display: flex;
 	flex-direction: row;
-	width: calc(100% - 60px);
+	width: calc(100% - 70px);
 	height: 100%;
+}
+.WindowOption{
+	float: right;
+	font-size: 18px;
+}
+.WindowMinimize, .WindowMaximize, .WindowClose, .WindowRestore{
+	-webkit-app-region: no-drag;
+	display: inline-block;
+	padding-top: 5px;
+	width: 36px;
+	height: 24px;
+	text-align: center;
+	transition: background 0.3s, font-color 0.3s;
 }
