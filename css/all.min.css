@@ -485,3 +485,34 @@
 .fa-window-restore:before {
   content: "\f2d2";
 }
+.fa-sitemap:before {
+  content: "\f0e8";
+}
+.fa-calendar-o:before {
+  content: "\f133";
+}
+.fa-exchange:before {
+  content: "\f0ec";
+}
+.fa-tasks:before {
+  content: "\f0ae";
+}
+.fa-vcard:before,
+.fa-address-card:before {
+  content: "\f2bb";
+}
+.fa-angle-left:before {
+  content: "\f104";
+}
+.fa-angle-right:before {
+  content: "\f105";
+}
+.fa-home:before {
+  content: "\f015";
+}
+.fa-fire:before {
+  content: "\f06d";
+}
+.fa-address-book:before {
+  content: "\f2b9";
+}

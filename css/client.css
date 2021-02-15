@@ -11,6 +11,7 @@
 	src: url('../fonts/VerdanaBold.ttf') format('truetype');
 }
 body{
+	transition: 0.3s;
 	margin: 0px;
 	border-radius: 5px;
 }
@@ -48,13 +49,18 @@ body{
 	place-items: center;
 }
 .PageViewer{
-	display: inline-block;
-	width: 150px;
-	height: 100%;
+	user-select: none;
+	-webkit-app-region: no-drag;
+	overflow: scroll;
+	display: block;
+	width: 250px;
+	height: calc(100% - 10px);
+	padding: 5px;
 }
 .ContentWrapper{
+	-webkit-app-region: no-drag;
 	flex: 1;
-	display: inline-block;
+	display: block;
 	width: calc(100% - 100px - 15px);
 	height: 100%;
 }
@@ -88,4 +94,121 @@ body{
 	height: 24px;
 	text-align: center;
 	transition: background 0.3s, font-color 0.3s;
+}
+.PageIcon{
+	cursor: pointer;
+	vertical-align: top;
+	height: 21px;
+	width: 15px;
+	font-size: 13px;
+	margin: 3px;
+}
+.PageTitle{
+	font-family: -apple-system,SF UI Text,Arial,PingFang SC,Hiragino Sans GB,Microsoft YaHei,WenQuanYi Micro Hei,sans-serif,SimHei,SimSun;
+	cursor: pointer;
+	vertical-align: top;
+	display: inline-block;
+	height: 15px;
+	transition: color 0.3s;
+	font-size: 13px;
+	margin: 3px;
+}
+.PageSonList{
+	margin-left: 15px;
+	overflow: hidden;
+}
+.PageToolList > i{
+	cursor: pointer;
+	text-align: center;
+	width: 15px;
+}
+.PageToolList{
+	transition: max-width 0.3s;
+	height: 15px;
+	max-width: 50px;
+	display: inline-block;
+	overflow: hidden;
+	margin: 3px;
+}
+.PageViewerBlock{
+	white-space: nowrap;
+	display: inline-block;
+	height: 21px;
+}
+.PageViewer::-webkit-scrollbar,
+.ContentWrapper::-webkit-scrollbar{
+    width: 5px;
+    height: 5px;
+}
+.PageViewer::-webkit-scrollbar-thumb,
+.ContentWrapper::-webkit-scrollbar-thumb{
+    border-radius: 1px;
+}
+.PageViewer::-webkit-scrollbar-corner,
+.ContentWrapper::-webkit-scrollbar-corner{
+    display: none;
+}
+.BlackBackground{
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,0);
+	transition: background 0.3s;
+	position: fixed;
+	top: 0;
+	left: 0;
+	border-radius: 5px;
+	z-index: 2;
+}
+.AllWindow{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	display:none;
+}
+.AlertWindow{
+	border-radius: 3px;
+	-webkit-app-region: no-drag;
+	position:fixed;
+	top: 50%;
+	left: 50%;
+	transform:translate(-50%, -50%);
+	z-index:3;
+	width: 500px;
+	padding: 5px;
+	font-size: 16px;
+	pointer-events: auto;
+	overflow-y: hidden;
+}
+hr{
+	display: block;
+	margin: 2px;
+	height: 1px;
+	border: 0px;
+}
+.WindowTitle{
+	font-family: Verdana;
+}
+.OptionBar{
+	font-family: Verdana;
+	display: inline-block;
+	margin: 3px 0px;
+	transition: background 0.3s;
+	width: calc(100% - 6px);
+	height: 22px;
+	padding: 4px;
+	text-align: left;
+	border-radius: 5px;
+}
+.OptionBar > div > input{
+	z-index: 4;
+}
+input{
+	-webkit-app-region: no-drag;
+	transition: background 0.3s;
+    padding: 3px;
+    font-size: 14px;
+    font-family: 'Consolas','Fira Code','Source Code Pro','Lucida Console','Cascadia Code','Ubuntu Mono','Monospace';;
+    height: 22px;
+    outline: none;
+    border: 0px;
 }
