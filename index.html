@@ -8,11 +8,15 @@
 		<link rel="stylesheet" href="./css/all.min.css">
 		<script>
 			var DarkMode = false;
-			if (window.matchMedia('(prefers-color-scheme)').media !== 'not all') {
+			if((typeof(localStorage.getItem('StyleChosen'))).toLowerCase() != 'string')
+				localStorage.setItem('StyleChosen', 'FollowSystem');
+			if (window.matchMedia('(prefers-color-scheme)').media !== 'not all' && localStorage.getItem('StyleChosen') == 'FollowSystem') {
 				if(window.matchMedia('(prefers-color-scheme: dark)').matches){
 					DarkMode = true, $('.ThemeTypeIf').attr('href','./css/dark.css');
 				}
 			}
+			if(localStorage.getItem('StyleChosen') == 'Dark')
+				DarkMode = true, $('.ThemeTypeIf').attr('href','./css/dark.css');
 		</script>
 	</head>
 	<body>
@@ -32,6 +36,8 @@
 				<div class="ToolListItem" title="Standings" onclick="openWindow('Standings')"><i class="fa fa-list"></i></div>
 				<div class="ToolListItem" title="Status" onclick="openWindow('Status')"><i class="fa fa-pie-chart"></i></div>
 				<div class="ToolListItem" title="User" onclick="openWindow('User')"><i class="fa fa-user"></i></div>
+				<div class="ToolListItem" title="Settings" onclick="NewPage('Settings', '.', -1, false)"><i class="fa fa-cogs"></i></div>
+				<div class="ToolListItem" title="Download Page" onclick="NewPage('DownloadInfo', '.', -1, false)"><i class="fa fa-download"></i></div>
 			</div></div>
 			<div class="Interface">
 				<div class="PageViewer"><div style="width:100%;height:100%;display:grid;place-items:center"><span style="font-size: 14px;font-family:Consolas;">Blank</span></div></div>
@@ -43,7 +49,17 @@
 						<div class="WindowRestore fa fa-window-restore" style="display:none" title="Restore"></div>
 						<div class="WindowClose fa fa-window-close" title="Close"></div>
 					</div>
-
+					<div class="WindowTitleSet">Get Started!</div>
+					<div class="PagesWrapper">
+						<div class="RealPage page-1">
+							<div style="display:grid;width:100%;height:100%;place-items:center">
+								<div style="text-align:center">
+									<div class="fa fa-rocket" style="font-size:120px"></div><br/><br/>
+									<span>Get started by clicking the buttons!</span>
+								</div>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -55,7 +71,8 @@
 		    if(navigator.userAgent.indexOf("Chrome")>0){
 		    	element = document.body;
 		    }
-			function ChangeTheme(){
+			function ChangeTheme(force){
+				if(!force && localStorage.getItem('StyleChosen')!='FollowSystem')	return;
 				if(!DarkMode){
 					$('.ThemeTypeIf').attr('href','./css/dark.css');
 				}
@@ -68,11 +85,11 @@
 				var listeners={
 				    dark: function(mediaQueryList ){
 				        if(mediaQueryList.matches && !DarkMode)
-				        	ChangeTheme();
+				        	ChangeTheme(false);
 				    },
 				    light: function(mediaQueryList){
 				        if(mediaQueryList.matches && DarkMode)
-				        	ChangeTheme();
+				        	ChangeTheme(false);
 				    }
 				}
 				window.matchMedia('(prefers-color-scheme: dark)').addListener(listeners.dark);
@@ -80,6 +97,7 @@
 			}
 			function setLeftWidth(_x){
 				$(".PageViewer").width(_x);
+				$(".ContentWrapper").css("width",`calc(100% - ${_x}px - 25px`)
 			}
 			$(".splitDiv").mousedown(function(e) {
 		    	$("body").css("user-select","none");

@@ -516,3 +516,23 @@
 .fa-address-book:before {
   content: "\f2b9";
 }
+.fa-gears:before,
+.fa-cogs:before {
+  content: "\f085";
+}
+.fa-rocket:before {
+  content: "\f135";
+}
+.fa-key:before {
+  content: "\f084";
+}
+.fa-eye-slash:before {
+  content: "\f070";
+}
+.fa-eyedropper:before {
+  content: "\f1fb";
+}
+.fa-save:before,
+.fa-floppy-o:before {
+  content: "\f0c7";
+}

@@ -28,11 +28,13 @@ body{
 	color: #f21c1c;
 }
 .PageViewer::-webkit-scrollbar-thumb,
-.ContentWrapper::-webkit-scrollbar-thumb{
+.ContentWrapper::-webkit-scrollbar-thumb,
+.RealPage::-webkit-scrollbar-thumb{
 	background-color: #888;
 }
 .PageViewer::-webkit-scrollbar:hover,
-.ContentWrapper::-webkit-scrollbar:hover{
+.ContentWrapper::-webkit-scrollbar:hover,
+.RealPage::-webkit-scrollbar:hover{
     background-color: #ccc;
 }
 hr{
